@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default function Home({ posts }: Props) {
-  console.log(posts);
   return (
     <div className='max-w-5xl mx-auto'>
       <Head>
@@ -41,7 +40,7 @@ export default function Home({ posts }: Props) {
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3
       md:gap-6 p-3 md:p-4'>
         {posts.map(post => (
-          <Link key={post._id} href={`/posts/${post.slug.current}`} >
+          <Link key={post._id} href={`/post/${post.slug.current}`} >
             <div className='border rounded-lg group cursor-pointer overflow-hidden'>
               <img className='h-64 w-full object-cover group-hover:scale-105
               transition-transform duration-200 ease-in-out' src={urlFor(post.mainImage).url()!} alt="" />
