@@ -63,7 +63,6 @@ export default function Home({ posts }: Props) {
         ))}
       </div>
  
-
     </div>
   )
 }
