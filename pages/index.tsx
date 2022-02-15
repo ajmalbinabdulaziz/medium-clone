@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import { sanityClient, urlFor } from '../sanity'
 import { Post } from '../typings';
-import Link from 'next/link'
 
 
 interface Props {
@@ -40,7 +39,7 @@ export default function Home({ posts }: Props) {
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3
       md:gap-6 p-3 md:p-4'>
         {posts.map(post => (
-          <Link key={post._id} href={`/post/${post.slug.current}`} >
+          <a key={post._id} href={`/post/${post.slug.current}`} target="_blank" >
             <div className='border rounded-lg group cursor-pointer overflow-hidden'>
               <img className='h-64 w-full object-cover group-hover:scale-105
               transition-transform duration-200 ease-in-out' src={urlFor(post.mainImage).url()!} alt="" />
@@ -59,7 +58,7 @@ export default function Home({ posts }: Props) {
               </div>
 
             </div>
-          </Link>
+          </a>
         ))}
       </div>
  
