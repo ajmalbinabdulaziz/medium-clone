@@ -19,7 +19,6 @@ interface Props {
 }
 
 function PostPage({ post }: Props) {
-
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>();
   const [ submitted, setSubmitted ] = useState(false)
 
@@ -86,7 +85,7 @@ function PostPage({ post }: Props) {
       {submitted ? (        
         <div className="flex flex-col bg-yellow-500 text-white p-10 my-10 max-w-2xl mx-auto" >
           <h3 className="text-3xl font-bold">Thank you for submitting your comment!</h3>
-          <p className="">Once it has been approved, it will appear below!</p>
+          <p className="py-2">Once it has been approved, it will appear below!</p>
         </div> 
       ) : (
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
@@ -168,6 +167,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             name,
             image,
         },
+        'comments': *[
+          _type == "comment" &&
+          post._ref == ^._id && 
+          approved == true],
         mainImage,
         slug,
         body
