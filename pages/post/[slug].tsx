@@ -19,6 +19,7 @@ interface Props {
 }
 
 function PostPage({ post }: Props) {
+  console.log(post)
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>();
   const [ submitted, setSubmitted ] = useState(false)
 
@@ -128,6 +129,20 @@ function PostPage({ post }: Props) {
             className="bg-yellow-500 h-10 w-full hover:bg-yellow-400 cursor-pointer border rounded text-white font-bold" />
         </form>
         )}
+
+        {/* Comment Section */}
+        <div className="flex flex-col p-10 my-10 mx-auto max-w-2xl shadow-yellow-500 shadow space-y-2">
+          <h3 className="text-4xl my-2">Comments</h3>
+          <hr className="pb-4"/>
+          {post.comments.map((comment) => (
+            <div>
+              <p className="pb-2">
+                <span className="text-yellow-500">{comment.name}: </span>
+                {comment.comment}
+              </p>
+            </div>
+          ))}
+        </div>
   
     </main>
   );
