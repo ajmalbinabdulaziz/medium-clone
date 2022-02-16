@@ -1,36 +1,36 @@
 export interface Post {
-    _id: String
-    _createdAt: String
-    title: String
+    _id: string
+    _createdAt: string
+    title: string
     author: {
-        name: String
-        image: String
+        name: string
+        image: string
     }
     comments: Comment[]
-    description: String
+    description: string
     mainImage: {
         asset: {
-            url: String
+            url: string
         }
     }
     slug: {
-        current: String
+        current: string
     }
     body: [object]
 }
 
 export interface Comment {
     approved: boolean
-    comment: String
-    email: String
-    name: String
+    comment: string
+    email: string
+    name: string
     post: {
-        _ref: String
-        _type: String
+        _ref: string
+        _type: string
     }
-    _createdAt: String
-    _id: String
-    _rev: String
-    _type: String
-    _updatedAt: String   
+    _createdAt: string
+    _id: string
+    _rev: string
+    _type: string
+    _updatedAt: string   
 }

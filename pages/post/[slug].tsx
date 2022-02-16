@@ -53,7 +53,7 @@ function PostPage({ post }: Props) {
         </h2>
 
         <div className="flex items-center space-x-2">
-          <img className="w-10 h-10 rounded-full" src={urlFor(post.author.image)} alt="" />
+          <img className="w-10 h-10 rounded-full" src={urlFor(post.author.image).url()!} alt="" />
 
           <p className="font-extralight text-sm">
               Blog post by <span className="text-green-600">{post.author.name}</span> - Published at {" "}
